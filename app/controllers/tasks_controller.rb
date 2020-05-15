@@ -1,6 +1,17 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
+  def complete_task
+    task = Task.find(params[:id])
+    task.completed = true
+    task.completed_timestamp = Time.now
+    if task.save
+      redirect_to home_url, notice: 'Task was successfully completed.'
+    else
+      redirect_to home_url, notice: task.errors.full_message
+    end
+  end
+
   # GET /tasks
   # GET /tasks.json
   def index

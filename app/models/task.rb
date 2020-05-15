@@ -5,6 +5,19 @@ class Task
   field :title, type: String
   field :due_date, type: Date, default: Date.today
   field :due_time, type: Time, default: Time.now
-  field :completed, type: Mongoid::Boolean
+  field :completed, type: Mongoid::Boolean, default: false
   field :completed_timestamp, type: DateTime
+
+  def due_date_to_s
+    self[:due_date].strftime("%A %b %d")
+  end
+
+  def due_time_to_s
+    self[:due_time].strftime("%l:%M %P")
+  end
+
+  def completed_timestamp_to_s
+    return nil unless self[:completed_timestamp]
+    self[:completed_timestamp].strftime("%A %b %d at %l:%M %P") 
+  end
 end

@@ -17,8 +17,8 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.title %></td>
-        <td><%= task.due_date %></td>
-        <td><%= task.due_time %></td>
+        <td><%= task.due_date_to_s %></td>
+        <td><%= task.due_time_to_s %></td>
         <td><%= task.completed %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
