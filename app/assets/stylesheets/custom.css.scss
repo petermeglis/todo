@@ -18,6 +18,10 @@ $color-accent: #ef8354;
   background-color: $color-dark-blue;
 }
 
-a, span, h1, h2, h3, h4, h5 {
+tr, td, a, span, p, h1, h2, h3, h4, h5 {
   color: $color-white;
+}
+
+.task {
+  background-color: $color-light-blue;
 }

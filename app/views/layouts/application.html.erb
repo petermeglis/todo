@@ -10,6 +10,16 @@
   </head>
 
   <body id="body">
-    <%= yield %>
+    <div class="container-fluid d-flex flex-column vh-100 overflow-hidden">
+      <div class="row flex-grow-1 overflow-hidden">
+
+        <%= render "home/sidebar" %>
+        
+        <div class="col mh-100 overflow-auto pt-3 px-4">
+          <%= yield %>
+        </div
+        >
+      </div>
+    </div>
   </body>
 </html>
