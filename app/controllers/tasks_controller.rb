@@ -65,10 +65,12 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
-    @task.destroy
-    respond_to do |format|
-      format.html { redirect_to home_url, notice: 'Task was successfully destroyed.' }
-      format.json { head :no_content }
+    @task.deleted = true
+    @task.deleted_timestamp = Time.now
+    if @task.save
+      redirect_to home_url, notice: 'Task was deleted completed.'
+    else
+      redirect_to home_url, notice: @task.errors.full_message
     end
   end
 
