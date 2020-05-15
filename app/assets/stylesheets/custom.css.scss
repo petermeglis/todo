@@ -1,1 +1,23 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+$color-dark-blue: #2d3142;
+$color-light-blue: #4f5d75;
+$color-grey: #bfc0c0;
+$color-white: #ffffff;
+$color-accent: #ef8354;
+
+// $body-bg: $color-dark-blue;
+// $body-color: $color-white;
+
+.sidebar {
+  background-color: $color-light-blue;
+}
+
+#body {
+  margin: 0;
+  background-color: $color-dark-blue;
+}
+
+a, span, h1, h2, h3, h4, h5 {
+  color: $color-white;
+}
